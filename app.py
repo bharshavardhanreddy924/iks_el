@@ -12,6 +12,14 @@ from chanakya_wisdom import (
 )
 import os
 from datetime import datetime
+from datetime import datetime
+
+# --- API KEY LOADING FOR STREAMLIT CLOUD ---
+api_key = None
+try:
+    api_key = st.secrets["api_key"]
+except Exception:
+    st.warning("API key not found in Streamlit secrets. Please add it to .streamlit/secrets.toml.")
 
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
